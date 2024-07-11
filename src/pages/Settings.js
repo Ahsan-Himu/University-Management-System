@@ -1,10 +1,11 @@
+// src/pages/Settings.js
 import React from 'react';
 
 const Settings = () => {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Settings</h2>
-      {/* Add your content for Settings here */}
+      <h1 className="text-2xl font-bold">Settings</h1>
+      {/* Add your settings page content here */}
     </div>
   );
 };

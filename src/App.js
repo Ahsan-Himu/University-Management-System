@@ -1,31 +1,39 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import Auth from './pages/Auth';
+import Profile from './pages/Profile';
 import Home from './pages/Home';
-import Login from './pages/Login';
+import Notice from './pages/Notice';
+import Attendance from './pages/Attendance';
+import Subjects from './pages/Subjects';
 import Dashboard from './pages/Dashboard';
-import CourseManagement from './pages/CourseManagement';
-import StudentManagement from './pages/StudentManagement';
-import FacultyManagement from './pages/FacultyManagement';
-import BatchManagement from './pages/BatchManagement';
+import Students from './pages/Students';
+import Faculties from './pages/Faculties';
+import Batch from './pages/Batch';
+import Courses from './pages/Courses';
 import Settings from './pages/Settings';
 
 const App = () => {
   return (
     <Router>
-      <Header />
-      <div className="flex">
+      <div className="flex h-screen overflow-hidden">
+        <Header />
         <Sidebar />
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-4 pt-16 overflow-auto">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/notice" element={<Notice />} />
+            <Route path="/attendance" element={<Attendance />} />
+            <Route path="/subjects" element={<Subjects />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/students" element={<StudentManagement />} />
-            <Route path="/faculties" element={<FacultyManagement />} />
-            <Route path="/courses" element={<CourseManagement />} />
-            <Route path="/batch" element={<BatchManagement />} />
+            <Route path="/students" element={<Students />} />
+            <Route path="/faculties" element={<Faculties />} />
+            <Route path="/batch" element={<Batch />} />
+            <Route path="/courses" element={<Courses />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>

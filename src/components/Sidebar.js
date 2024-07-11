@@ -1,67 +1,113 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaUsers, FaChalkboardTeacher, FaBook, FaCalendarAlt, FaCog } from 'react-icons/fa';
+import { FaHome, FaBook, FaUsers, FaChalkboardTeacher, FaCalendar, FaUserGraduate, FaCog } from 'react-icons/fa';
 
 const Sidebar = () => {
   return (
-    <aside className="bg-gray-700 text-white w-64 min-h-screen p-4">
-      <ul className="space-y-4">
-        <li>
-          <NavLink 
-            to="/students"
-            className={({ isActive }) => 
-              `flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-600 ${isActive ? 'bg-gray-600 text-yellow-400' : ''}`
+    <aside className="bg-gray-900 text-gray-100 w-64 h-screen p-4 mt-10">
+      <div className="flex flex-col h-full justify-around">
+        {/* Sidebar Links for Group 1 */}
+        <div className="space-y-2">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
             }
           >
-            <FaUsers className="text-xl" />
+            <FaHome />
+            <span>Home</span>
+          </NavLink>
+          <NavLink
+            to="/notice"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+          >
+            <FaBook />
+            <span>Notice</span>
+          </NavLink>
+          <NavLink
+            to="/attendance"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+          >
+            <FaCalendar />
+            <span>Attendance</span>
+          </NavLink>
+          <NavLink
+            to="/subjects"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+          >
+            <FaBook />
+            <span>Subjects</span>
+          </NavLink>
+        </div>
+
+        {/* Sidebar Links for Group 2 */}
+        <div className="mt-2 space-y-2">
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+          >
+            <FaChalkboardTeacher />
+            <span>Dashboard</span>
+          </NavLink>
+          <NavLink
+            to="/students"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+          >
+            <FaUserGraduate />
             <span>Students</span>
           </NavLink>
-        </li>
-        <li>
-          <NavLink 
+          <NavLink
             to="/faculties"
-            className={({ isActive }) => 
-              `flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-600 ${isActive ? 'bg-gray-600 text-yellow-400' : ''}`
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
             }
           >
-            <FaChalkboardTeacher className="text-xl" />
+            <FaUsers />
             <span>Faculties</span>
           </NavLink>
-        </li>
-        <li>
-          <NavLink 
+          <NavLink
             to="/courses"
-            className={({ isActive }) => 
-              `flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-600 ${isActive ? 'bg-gray-600 text-yellow-400' : ''}`
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
             }
           >
-            <FaBook className="text-xl" />
+            <FaBook />
             <span>Courses</span>
           </NavLink>
-        </li>
-        <li>
-          <NavLink 
+          <NavLink
             to="/batch"
-            className={({ isActive }) => 
-              `flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-600 ${isActive ? 'bg-gray-600 text-yellow-400' : ''}`
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
             }
           >
-            <FaCalendarAlt className="text-xl" />
+            <FaCalendar />
             <span>Batch</span>
           </NavLink>
-        </li>
-        <li>
-          <NavLink 
+        </div>
+
+        {/* Settings */}
+        <div className=" border-t border-gray-700 pt-4 pb-8">
+          <NavLink
             to="/settings"
-            className={({ isActive }) => 
-              `flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-600 ${isActive ? 'bg-gray-600 text-yellow-400' : ''}`
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
             }
           >
-            <FaCog className="text-xl" />
+            <FaCog />
             <span>Settings</span>
           </NavLink>
-        </li>
-      </ul>
+        </div>
+      </div>
     </aside>
   );
 };
