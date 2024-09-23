@@ -121,6 +121,21 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             <span>Settings</span>
           </NavLink>
         </div>
+
+        {/* React Practice */}
+        <div className="border-t border-gray-700 pt-4">
+          <NavLink
+            to="/ReactPractice"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 px-4 py-2 md:py-2 md:mb-20 rounded-md hover:bg-gray-800 ${isActive ? 'bg-gray-700' : ''}`
+            }
+            onClick={toggleSidebar}
+          >
+            <FaCog />
+            <span>React Practice</span>
+          </NavLink>
+        </div>
+  
       </div>
     </div>
   );

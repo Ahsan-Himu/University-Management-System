@@ -14,6 +14,7 @@ import Faculties from './pages/Faculties';
 import Batch from './pages/Batch';
 import Courses from './pages/Courses';
 import Settings from './pages/Settings';
+import ReactPractice from '../src/pages/ReactPractice/ReactPractice'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
       <div className="flex h-screen overflow-hidden">
         <Header />
         <Sidebar />
-        <main className="flex-1 p-4 pt-16 overflow-auto">
+        <main className="flex-1 pt-16 overflow-auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/batch" element={<Batch />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path='/ReactPractice' element={<ReactPractice />} />
           </Routes>
         </main>
       </div>
